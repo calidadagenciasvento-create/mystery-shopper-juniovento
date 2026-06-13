@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Follow Up Mystery Shopper</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+background:#f4f6f9;
+padding:30px;
+color:#1f2937;
+}
+
+.header{
+background:linear-gradient(135deg,#003B71,#005EB8);
+color:white;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:32px;
+font-weight:700;
+}
+
+.header p{
+opacity:.9;
+margin-top:5px;
+}
+
+/* Contenedor Superior de KPIs - Actualizado a 3 Columnas */
+.top-metrics-container {
+display:grid;
+grid-template-columns: 1fr 1.2fr 1.2fr;
+gap: 20px;
+margin-bottom: 25px;
+}
+
+.global-kpis {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.hr-tracking-section {
+background: #ffffff;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 12px rgba(0,0,0,.08);
+border-top: 5px solid #005EB8;
+}
+
+.hr-tracking-title {
+color: #003B71;
+font-size: 15px;
+font-weight: 700;
+text-transform: uppercase;
+margin-bottom: 15px;
+letter-spacing: 0.5px;
+border-left: 3px solid #005EB8;
+padding-left: 8px;
+}
+
+.hr-kpis-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+}
+
+/* Tarjeta Nueva para Seguimiento del Proveedor */
+.provider-tracking-section {
+background: #ffffff;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 12px rgba(0,0,0,.08);
+border-top: 5px solid #003B71;
+}
+
+.provider-tracking-title {
+color: #003B71;
+font-size: 15px;
+font-weight: 700;
+text-transform: uppercase;
+margin-bottom: 15px;
+letter-spacing: 0.5px;
+border-left: 3px solid #003B71;
+padding-left: 8px;
+}
+
+.provider-kpis-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+}
+
+.kpi{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+border-top:5px solid #005EB8;
+}
+
+.hr-tracking-section .kpi, .provider-tracking-section .kpi {
+background: #f8fafc;
+box-shadow: none;
+border-top: none;
+padding: 15px 12px;
+}
+
+.hr-tracking-section .kpi {
+border-left: 4px solid #e2e8f0;
+}
+
+.provider-tracking-section .kpi {
+border-left: 4px solid #005EB8;
+}
+
+.kpi-title{
+font-size:14px;
+color:#6b7280;
+margin-bottom:8px;
+font-weight: 600;
+}
+
+.kpi-value{
+font-size:38px;
+font-weight:700;
+}
+
+.kpi-value-pct {
+font-size: 28px;
+font-weight: 700;
+line-height: 1.3;
+}
+
+.kpi-subtext {
+font-size: 11px;
+color: #6b7280;
+margin-top: 4px;
+font-weight: 500;
+}
+
+.red{
+color:#C00000;
+}
+
+.green{
+color:#00B050;
+}
+
+.yellow{
+color:#FFC000;
+}
+
+.section{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.section h2{
+color:#003B71;
+margin-bottom:20px;
+border-left:5px solid #005EB8;
+padding-left:10px;
+font-size: 20px;
+}
+
+.table{
+width:100%;
+border-collapse:collapse;
+}
+
+.table th{
+background:#003B71;
+color:white;
+padding:12px;
+text-align:left;
+font-size: 14px;
+}
+
+.table td{
+padding:11px 12px;
+border-bottom:1px solid #e5e7eb;
+font-size: 14px;
+}
+
+.flex{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.badge{
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+color:white;
+display: inline-block;
+text-align: center;
+min-width: 110px;
+}
+
+/* --- CLASES DE COLOR CORREGIDAS --- */
+.badge-red, .badge-alto-riesgo, .badge-riesgo-critico {
+background: #C00000 !important;
+color: white !important;
+}
+
+.badge-riesgo {
+background: #D4A300 !important;
+color: white !important;
+}
+
+.badge-yellow{
+background:#FFC000;
+color:black;
+}
+
+.badge-green{
+background:#00B050;
+}
+
+.text-red { color: #C00000; font-weight: bold; }
+.text-yellow { color: #D4A300; font-weight: bold; }
+.text-green { color: #00B050; font-weight: bold; }
+
+/* Estilos de las Tarjetas de Pareto */
+.pareto-container {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-top: 15px;
+}
+
+.pareto-card {
+background: linear-gradient(to right, #fff5f5, #ffffff);
+border: 1px solid #fee2e2;
+border-left: 6px solid #C00000;
+border-radius: 8px;
+padding: 15px 20px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+box-shadow: 0 2px 4px rgba(192,0,0,0.02);
+}
+
+.pareto-info {
+flex-grow: 1;
+padding-right: 20px;
+}
+
+.pareto-rubro-badge {
+font-size: 11px;
+font-weight: 800;
+color: #003B71;
+text-transform: uppercase;
+margin-bottom: 4px;
+display: inline-block;
+background: #e2e8f0;
+padding: 2px 8px;
+border-radius: 4px;
+letter-spacing: 0.3px;
+}
+
+.pareto-title {
+font-size: 15px;
+font-weight: 700;
+color: #003B71;
+margin-bottom: 3px;
+}
+
+.pareto-desc {
+font-size: 13px;
+color: #4b5563;
+margin-bottom: 8px;
+}
+
+.pareto-progress-bg {
+background: #e5e7eb;
+height: 6px;
+border-radius: 3px;
+width: 250px;
+overflow: hidden;
+}
+
+.pareto-progress-fill {
+background: #C00000;
+height: 100%;
+border-radius: 3px;
+}
+
+.pareto-stats {
+text-align: right;
+min-width: 110px;
+}
+
+.pareto-percentage {
+font-size: 22px;
+font-weight: 800;
+color: #C00000;
+line-height: 1;
+}
+
+.pareto-sample {
+font-size: 11px;
+color: #6b7280;
+margin-top: 4px;
+font-weight: 600;
+}
+
+/* Estilos de las Listas Desplegables (Acordeones) */
+.category-accordion {
+margin-bottom: 12px;
+border: 1px solid #e5e7eb;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+transition: all 0.3s ease;
+}
+
+.category-accordion[open] {
+box-shadow: 0 4px 10px rgba(0,59,113,0.08);
+border-color: #005EB8;
+}
+
+.category-summary {
+background: #f1f5f9;
+color: #003B71;
+padding: 14px 18px;
+font-weight: 700;
+font-size: 14px;
+text-transform: uppercase;
+cursor: pointer;
+outline: none;
+user-select: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-left: 5px solid #005EB8;
+}
+
+.category-summary::-webkit-details-marker {
+display: none;
+}
+
+.category-summary::after {
+content: '➣';
+font-size: 12px;
+transform: rotate(90deg);
+transition: transform 0.2s ease;
+color: #005EB8;
+}
+
+.category-accordion[open] .category-summary::after {
+transform: rotate(270deg);
+}
+
+.accordion-content {
+padding: 0;
+background: #ffffff;
+border-top: 1px solid #e5e7eb;
+}
+
+.alert-box{
+background:#eef6ff;
+border-left:5px solid #005EB8;
+padding:20px;
+border-radius:8px;
+line-height:1.6;
+}
+
+.footer{
+margin-top:20px;
+background:#003B71;
+color:white;
+padding:20px;
+border-radius:10px;
+font-size: 15px;
+}
+
+.sub-cell-info {
+display: block;
+font-size: 11px;
+color: #6b7280;
+margin-top: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>FOLLOW UP SEMANAL MYSTERY SHOPPER</h1>
+<p>Junio 2026 | Semana 1</p>
+</div>
+
+<!-- CONTENEDOR SUPERIOR DE METRICAS ACTUALIZADO A 3 COLUMNAS -->
+<div class="top-metrics-container">
+    
+    <div class="global-kpis">
+        <div class="kpi">
+            <div class="kpi-title">Promedio General</div>
+            <div class="kpi-value red">60</div>
+        </div>
+        <div class="kpi">
+            <div class="kpi-title">Agencias Evaluadas</div>
+            <div class="kpi-value">23</div>
+        </div>
+    </div>
+
+    <div class="hr-tracking-section">
+        <div class="hr-tracking-title">Seguimientos con Capital Humano</div>
+        <div class="hr-kpis-grid">
+            <div class="kpi">
+                <div class="kpi-title">Planes de Acción</div>
+                <div class="kpi-value yellow">14</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-title">Exhortos</div>
+                <div class="kpi-value yellow">2</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-title">Actas Administrativas</div>
+                <div class="kpi-value red">5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUEVO BLOQUE: CONTROL DE VIDEOS DEL PROVEEDOR -->
+    <div class="provider-tracking-section">
+        <div class="provider-tracking-title">Entregas del Proveedor</div>
+        <div class="provider-kpis-grid">
+            <div class="kpi">
+                <div class="kpi-title">Meta Total</div>
+                <div class="kpi-value" style="color: #1f2937;">150</div>
+                <div class="kpi-subtext">Videos Proy.</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-title">Avance Físico</div>
+                <div class="kpi-value-pct" style="color: #005EB8;">33 <span style="font-size:12px; color:#6b7280; font-weight:normal;">/ 23 Ev.</span></div>
+                <div class="kpi-subtext" style="color:#00B050; font-weight: bold;">15% Sem. 1</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-title">Por Entregar</div>
+                <div class="kpi-value-pct red">78%</div>
+                <div class="kpi-subtext">117 Videos</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="flex">
+
+<div class="section">
+<h2>Agencias que alcanzan el mínimo Promedio</h2>
+<table class="table">
+<tr>
+<th>Agencia</th>
+<th>Calificación</th>
+<th>Estatus vs Objetivo (Min. 85)</th>
+</tr>
+<tr>
+<td>86 Irapuato</td>
+<td><span class="badge badge-green">86</span></td>
+<td><small style="color:#00B050; font-weight:bold;">Aprobado</small></td>
+</tr>
+<tr>
+<td>06 Ecatepec</td>
+<td><span class="badge badge-green">85</span></td>
+<td><small style="color:#00B050; font-weight:bold;">Aprobado</small></td>
+</tr>
+</table>
+<p style="font-size:11px; color:#6b7280; margin-top:10px;">* Nota: Aunque son las puntuaciones más altas, solo alcanzan el mínimo aprobatorio.</p>
+</div>
+
+<div class="section">
+<h2>Top 5 Mayor Riesgo</h2>
+<table class="table">
+<tr>
+<th>Agencia</th>
+<th>Calificación</th>
+<th>Acción Requerida</th>
+</tr>
+<tr>
+<td>264 Jesus Maria</td>
+<td><span class="badge badge-red">27</span></td>
+<td><small style="font-weight:bold;">Plan de Acción</small></td>
+</tr>
+<tr>
+<td>88 Puebla Capu</td>
+<td><span class="badge badge-red">33</span></td>
+<td><small style="font-weight:bold;">Acta Administrativa</small></td>
+</tr>
+<tr>
+<td>127 Pie de la Cuesta</td>
+<td><span class="badge badge-red">47</span></td>
+<td><small style="font-weight:bold;">Exhorto</small></td>
+</tr>
+<tr>
+<td>66 Macroplaza Tecamac</td>
+<td><span class="badge badge-red">47</span></td>
+<td><small style="font-weight:bold;">Plan de Acción</small></td>
+</tr>
+<tr>
+<td>287 Tapachula Centro</td>
+<td><span class="badge badge-red">47</span></td>
+<td><small style="font-weight:bold;">Plan de Acción</small></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<!-- SECCIÓN: PARETO -->
+<div class="section">
+    <h2>Análisis de Pareto: Top 5 Desviaciones Críticas en Atención al Cliente</h2>
+    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">
+        Principales brechas comerciales. 5 rubros específicos donde gerentes regionales, y Gerentes Junior deben generar mayor foco de atención.
+    </p>
+    
+    <div class="pareto-container">
+        <div class="pareto-card">
+            <div class="pareto-info">
+                <span class="pareto-rubro-badge">Impacto Crítico #1</span>
+                <div class="pareto-title">Plan de Éxito</div>
+                <div class="pareto-desc">Se detectó una baja ejecución en la presentación proactiva del Plan de Éxito durante el flujo de la venta. Los asesores no logran integrar de forma orgánica los tres pilares de valor (Encontramos el modelo ideal para ti, sales protegido con garantía de 3 años, póliza contra robo y tu primera cita para servicio).</div>
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 95.7%;"></div></div>
+            </div>
+            <div class="pareto-stats">
+                <div class="pareto-percentage">95.7%</div>
+                <div class="pareto-sample">22 de 23 Agencias No Cumplen</div>
+            </div>
+        </div>
+
+        <div class="pareto-card">
+            <div class="pareto-info">
+                <span class="pareto-rubro-badge">Impacto Crítico #2</span>
+                <div class="pareto-title">Sondeo / Villano</div>
+                <div class="pareto-desc">Las agencias limitan su interacción a preguntas superficiales o puramente técnicas, omitiendo por completo la estructura metodológica de los tres niveles de problema (externo, interno y filosófico). Al no identificar el "villano"..</div>
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 95.5%;"></div></div>
+            </div>
+            <div class="pareto-stats">
+                <div class="pareto-percentage">91.3%</div>
+                <div class="pareto-sample">21 de 23 Agencias No Cumplen</div>
+            </div>
+        </div>
+
+        <div class="pareto-card">
+            <div class="pareto-info">
+                <span class="pareto-rubro-badge">Impacto Crítico #3</span>
+                <div class="pareto-title">Script Maestro</div>
+                <div class="pareto-desc">La presentación del producto se está realizando de manera genérica. Los asesores en piso enumeran características técnicas de la motocicleta (frenos, motor, rendimiento), pero no las conectan de forma personalizada con las necesidades específicas que el cliente expuso previamente en el sondeo. Esto debilita el Script Maestro y reduce la percepción de que la unidad ofrecida es la solución ideal para el cliente.</div>
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 91.3%;"></div></div>
+            </div>
+            <div class="pareto-stats">
+                <div class="pareto-percentage">91.3%</div>
+                <div class="pareto-sample">21 de 23 Agencias No Cumplen</div>
+            </div>
+        </div>
+
+        <div class="pareto-card">
+            <div class="pareto-info">
+                <span class="pareto-rubro-badge">Impacto Crítico #4</span>
+                <div class="pareto-title">Garantía</div>
+                <div class="pareto-desc">Aunque la garantía es uno de nuestros mayores diferenciadores en el mercado, se está comunicando de forma deficiente o incompleta. El hallazgo más crítico en este rubro es la omisión de información sobre cuándo realizar el primer servicio preventivo.</div>
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 69.6%;"></div></div>
+            </div>
+            <div class="pareto-stats">
+                <div class="pareto-percentage">69.6%</div>
+                <div class="pareto-sample">16 de 23 Agencias No Cumplen</div>
+            </div>
+        </div>
+
+        <div class="pareto-card">
+            <div class="pareto-info">
+                <span class="pareto-rubro-badge">Impacto Crítico #5</span>
+                <div class="pareto-title">Registro en Bitácora y uso de Pilot</div>
+                <div class="pareto-desc">. Los asesores están omitiendo solicitar formalmente los datos de contacto del cliente, lo que se traduce en un bajo registro en la bitácora física y la falta de captura en la plataforma Pilot.</div>
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 69.6%;"></div></div>
+            </div>
+            <div class="pareto-stats">
+                <div class="pareto-percentage">69.6%</div>
+                <div class="pareto-sample">16 de 23 Agencias No Cumplen</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECCIÓN: ANÁLISIS COMPLETO CON ACORDEONES INTERACTIVOS -->
+<div class="section">
+    <h2>Análisis Completo de Desviación por Rubro Evaluado</h2>
+    <p style="font-size: 13px; color: #6b7280; margin-bottom: 20px;">
+        Haz clic sobre cualquiera de los rubros marcadas con la flecha para desplegar u ocultar el desglose completo del reporte semanal.
+    </p>
+
+    <details class="category-accordion">
+        <summary class="category-summary">1. Protocolo de Bienvenida</summary>
+        <div class="accordion-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rubro Específico Evaluado</th>
+                        <th style="text-align: center; width: 160px;">No Cumplen</th>
+                        <th style="text-align: center; width: 160px;">% Desviación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Script de Bienvenida</td>
+                        <td style="text-align: center;">8 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">34.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Tiempos de Espera (Atención inmediata &lt; 40 segundos)</td>
+                        <td style="text-align: center;">3 de 23</td>
+                        <td style="text-align: center;" class="text-green">13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Contención al cliente (Presencias activas en caso de saturación)</td>
+                        <td style="text-align: center;">3 de 23</td>
+                        <td style="text-align: center;" class="text-green">13.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+
+    <details class="category-accordion">
+        <summary class="category-summary">2. Atención al Cliente</summary>
+        <div class="accordion-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rubro Específico Evaluado</th>
+                        <th style="text-align: center; width: 160px;">No Cumplen</th>
+                        <th style="text-align: center; width: 160px;">% Desviación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plan de éxito (Moto ideal, ajuste a tu bolsillo y seguridad)</td>
+                        <td style="text-align: center;">22 de 23</td>
+                        <td style="text-align: center;" class="text-red">95.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Escucha Activa (Plena atención sin repetir preguntas ni distracciones)</td>
+                        <td style="text-align: center;">3 de 23</td>
+                        <td style="text-align: center;" class="text-green">13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Proactividad (Iniciativa constante y manejo de silencios incómodos)</td>
+                        <td style="text-align: center;">4 de 23</td>
+                        <td style="text-align: center;" class="text-green">17.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Sondeo/Villano (Identificar los 3 niveles de problema: externo, interno y filosófico)</td>
+                        <td style="text-align: center;">21 de 22</td>
+                        <td style="text-align: center;" class="text-red">95.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Alternativas (Ofrecer variedad considerando distintos modelos y segmentos)</td>
+                        <td style="text-align: center;">2 de 23</td>
+                        <td style="text-align: center;" class="text-green">8.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Invitación a subirse a la moto de su interés</td>
+                        <td style="text-align: center;">3 de 22</td>
+                        <td style="text-align: center;" class="text-green">13.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Script Maestro (Modelo alineado con beneficio de éxito o transformación)</td>
+                        <td style="text-align: center;">21 de 23</td>
+                        <td style="text-align: center;" class="text-red">91.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Ventec / Ofrecer casco durante la atención</td>
+                        <td style="text-align: center;">8 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">34.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Información completa y correcta (Claridad técnica y comercial)</td>
+                        <td style="text-align: center;">9 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">39.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Garantía (Comunicar vigencia de 3 años o 33,000 km y 1er servicio)</td>
+                        <td style="text-align: center;">16 de 23</td>
+                        <td style="text-align: center;" class="text-red">69.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Póliza contra robo con violencia (Vigencia gratuita de 3 meses)</td>
+                        <td style="text-align: center;">12 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">52.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Refacciones (Explicar claramente los canales de adquisición)</td>
+                        <td style="text-align: center;">9 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">39.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Seguro Ana (Ofrecer cotización formal bajo convenio)</td>
+                        <td style="text-align: center;">12 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">52.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Opciones de Pago disponibles para concretar operaciones</td>
+                        <td style="text-align: center;">5 de 23</td>
+                        <td style="text-align: center;" class="text-green">21.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Financiamientos / Énfasis principal en VENTO CREDIT</td>
+                        <td style="text-align: center;">3 de 23</td>
+                        <td style="text-align: center;" class="text-green">13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Pago en efectivo (Aclarar expresamente que no se recibe en sucursal)</td>
+                        <td style="text-align: center;">12 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">52.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Invitación a la compra (Ejecución de Cierre Directo)</td>
+                        <td style="text-align: center;">8 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">34.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Cierre Transicional (Entrega física o digital de la cotización formal)</td>
+                        <td style="text-align: center;">14 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">60.9%</td>
+                    </tr>
+                    <tr>
+                        <td>Status Quo (Exponer las consecuencias negativas de no adquirir la unidad)</td>
+                        <td style="text-align: center;">3 de 9</td>
+                        <td style="text-align: center;" class="text-yellow">33.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Promociones y beneficios vigentes (Hot Week/MSI/Obsequios)</td>
+                        <td style="text-align: center;">1 de 23</td>
+                        <td style="text-align: center;" class="text-green">4.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Amabilidad (Empatía, cordialidad y frases de cortesía constantes)</td>
+                        <td style="text-align: center;">0 de 23</td>
+                        <td style="text-align: center;" class="text-green">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Registro en Bitácora y uso de Pilot (Solicitud activa de datos)</td>
+                        <td style="text-align: center;">16 de 23</td>
+                        <td style="text-align: center;" class="text-red">69.6%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+
+    <details class="category-accordion">
+        <summary class="category-summary">3. Imagen de la Agencia</summary>
+        <div class="accordion-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rubro Específico Evaluado</th>
+                        <th style="text-align: center; width: 160px;">No Cumplen</th>
+                        <th style="text-align: center; width: 160px;">% Desviación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vidrios, Banquetas y piso Limpios (Exterior e interior)</td>
+                        <td style="text-align: center;">0 de 23</td>
+                        <td style="text-align: center;" class="text-green">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Motos alineadas y presentables en piso de venta</td>
+                        <td style="text-align: center;">0 de 23</td>
+                        <td style="text-align: center;" class="text-green">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Escritorios ordenados y limpios (Libres de comida o distractores)</td>
+                        <td style="text-align: center;">0 de 23</td>
+                        <td style="text-align: center;" class="text-green">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Pantalla (Encendida transmitiendo exclusivamente contenido de la marca)</td>
+                        <td style="text-align: center;">1 de 22</td>
+                        <td style="text-align: center;" class="text-green">4.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Conversación y Ruido en la Agencia (Lenguaje profesional y música moderada)</td>
+                        <td style="text-align: center;">3 de 23</td>
+                        <td style="text-align: center;" class="text-green">13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Uniforme e imagen (Portación completa del uniforme oficial corporativo)</td>
+                        <td style="text-align: center;">1 de 23</td>
+                        <td style="text-align: center;" class="text-green">4.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Alimentos y bebidas (Evitar consumo frente al cliente en piso)</td>
+                        <td style="text-align: center;">0 de 23</td>
+                        <td style="text-align: center;" class="text-green">0.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+
+    <details class="category-accordion">
+        <summary class="category-summary">4. Despedida</summary>
+        <div class="accordion-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rubro Específico Evaluado</th>
+                        <th style="text-align: center; width: 160px;">No Cumplen</th>
+                        <th style="text-align: center; width: 160px;">% Desviación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Script de Despedida Institucional</td>
+                        <td style="text-align: center;">13 de 23</td>
+                        <td style="text-align: center;" class="text-yellow">56.5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+
+</div>
+
+
+<!-- SECCIÓN ACTUALIZADA: DESGLOSE POR GERENTE DISTRITAL -->
+<div class="section">
+    <h2>Estatus y Desempeño por Gerente Distrital</h2>
+    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">
+           </p>
+    <table class="table">
+        <tr>
+            <th>Gerente Distrital</th>
+            <th style="text-align: center; width: 120px;">Total Agencias</th>
+            <th style="text-align: center; width: 120px;">Nota Experta</th>
+            <th style="text-align: center; width: 120px;">Curva Aprendizaje.</th>
+            <th style="text-align: center; width: 140px;">Promedio Por Distrito</th>
+            <th style="text-align: center; width: 150px;">Estatus</th>
+        </tr>
+        <tr>
+            <td>
+                <strong>Vanesa Mondragón Salgado</strong>
+                <span class="sub-cell-info">Distrito 1</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">6</td>
+            <td style="text-align: center;">6</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">63</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Aldo Mauricio Tapia Gómez</strong>
+                <span class="sub-cell-info">Distrito 3</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">8</td>
+            <td style="text-align: center;">7</td>
+            <td style="text-align: center; font-weight: bold; color:#005EB8;">1</td>
+            <td style="text-align: center; font-weight: bold;">63</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Juan Carlos Rojo Barrañón</strong>
+                <span class="sub-cell-info">Distrito 2</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">4</td>
+            <td style="text-align: center;">4</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">58</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Omar Madrigal Torres</strong>
+                <span class="sub-cell-info">Distrito 4</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">5</td>
+            <td style="text-align: center;">5</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">52</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+    </table>
+</div>
+
+<!-- SECCIÓN CON RECTÁNGULOS DE RIESGO Y ALTO RIESGO CORREGIDOS EN ROJO -->
+<div class="section">
+    <h2>Estatus y Desempeño por Gerente Regional</h2>
+    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">
+            </p>
+    <table class="table">
+        <tr>
+            <th>Gerente Regional </th>
+            <th style="text-align: center; width: 120px;">Total Agencias</th>
+            <th style="text-align: center; width: 120px;">Nota Experta</th>
+            <th style="text-align: center; width: 120px;">Curva Aprend.</th>
+            <th style="text-align: center; width: 140px;">Promedio Región</th>
+            <th style="text-align: center; width: 150px;">Estatus</th>
+        </tr>
+        <tr>
+            <td>
+                <strong>Josué Sebastián Rea García</strong>
+                <span class="sub-cell-info">Región 23</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;" class="text-green">85</td>
+            <td style="text-align: center;"><span class="badge badge-green">APROBADO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Christian Alexis Fernández Gómez</strong>
+                <span class="sub-cell-info">Región 2</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;" class="text-yellow">81</td>
+            <td style="text-align: center;"><span class="badge badge-riesgo">RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Diego Ulises Rea López</strong>
+                <span class="sub-cell-info">Región 9</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;" class="text-yellow">73</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Jhonatan Santiago Zárate Nuñez</strong>
+                <span class="sub-cell-info">Región 15</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">67</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Josué Sebastián Rea García</strong>
+                <span class="sub-cell-info">Región 6</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">63</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Jorge Luis Contreras Hernández</strong>
+                <span class="sub-cell-info">Región 4</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">61</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Pedro Humberto Trejo Rayón</strong>
+                <span class="sub-cell-info">Región 3</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">61</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Pedro Alberto Fajardo Koh</strong>
+                <span class="sub-cell-info">Región 28</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">61</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Rafael Álvarez Andrade</strong>
+                <span class="sub-cell-info">Región 13</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">3</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; font-weight: bold; color:#005EB8;">1</td>
+            <td style="text-align: center; font-weight: bold;">59</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Karina Vargas Vargas</strong>
+                <span class="sub-cell-info">Región 17</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">3</td>
+            <td style="text-align: center;">3</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">57</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Armando Reyes Sánchez</strong>
+                <span class="sub-cell-info">Región 5</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">51</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Carlos Hermilo Landeros Heredia</strong>
+                <span class="sub-cell-info">Región 26</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">48</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Iván García Cerritos</strong>
+                <span class="sub-cell-info">Región 14</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">48</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Antonio De Jesús Lara Aguilar</strong>
+                <span class="sub-cell-info">Región 21</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">47</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Adolfo Manuel Barrientos Arellano</strong>
+                <span class="sub-cell-info">Región 24</span>
+            </td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">33</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer">
+<b>Conclusión Ejecutiva:</b><br><br>
+Los resultados de la primera semana de junio de 2026 confirman que la red comercial mantiene desviaciones críticas en la ejecución del Manual de Ventas y los estándares de la Guía de Calidad. Al consolidar un promedio general de 60 puntos, nos posicionamos significativamente por debajo del objetivo institucional mínimo de 85 puntos.
+Ante este escenario, el equipo de Calidad activó de inmediato una estrategia integral de contención. Se ha completado la retroalimentación técnica y el seguimiento directo con las agencias solicitantes, dotándolas de material de apoyo. Asimismo, se establecieron planes de acción obligatorios donde el Gerente de Agencia asume la responsabilidad directa de la mejora continua a través de dinámicas de role play validadas con evidencia en video. Complementando esta estrategia, se impartió una sesión de capacitación intensiva a Gerentes Regionales y Gerentes Junior, alineando criterios de auditoría mediante herramientas operativas específicas diseñadas para erradicar las brechas críticas de atención a la brevedad.
+</div>
+
+</body>
+</html>
