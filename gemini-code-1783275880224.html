@@ -14,7 +14,7 @@ body{background:#f4f6f9;padding:30px;color:#1f2937;}
 .global-kpis {display: grid;grid-template-columns: repeat(2, 1fr);gap: 20px;}
 .hr-tracking-section {background: #ffffff;border-radius: 12px;padding: 20px;box-shadow: 0 4px 12px rgba(0,0,0,.08);border-top: 5px solid #005EB8;}
 .hr-tracking-title {color: #003B71;font-size: 15px;font-weight: 700;text-transform: uppercase;margin-bottom: 15px;letter-spacing: 0.5px;border-left: 3px solid #005EB8;padding-left: 8px;}
-.hr-kpis-grid {display: grid;grid-template-columns: repeat(4, 1fr);gap: 15px;}
+.hr-kpis-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 15px;}
 .provider-tracking-section {background: #ffffff;border-radius: 12px;padding: 20px;box-shadow: 0 4px 12px rgba(0,0,0,.08);border-top: 5px solid #003B71;}
 .provider-tracking-title {color: #003B71;font-size: 15px;font-weight: 700;text-transform: uppercase;margin-bottom: 15px;letter-spacing: 0.5px;border-left: 3px solid #003B71;padding-left: 8px;}
 .provider-kpis-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 12px;}
@@ -71,18 +71,18 @@ body{background:#f4f6f9;padding:30px;color:#1f2937;}
 
 <div class="header">
     <h1>FOLLOW UP MYSTERY SHOPPER AGENCIAS VENTO</h1>
-    <p>Junio 2026 | Reporte Mensual</p>
+    <p>Julio 2026 | Reporte Acumulado - Semana 1</p>
 </div>
 
 <div class="top-metrics-container">        
     <div class="global-kpis">        
         <div class="kpi">            
             <div class="kpi-title">Promedio General</div>            
-            <div class="kpi-value text-red">66</div>        
+            <div class="kpi-value text-red">65</div>        
         </div>        
         <div class="kpi">            
             <div class="kpi-title">Agencias Evaluadas</div>            
-            <div class="kpi-value">136</div>        
+            <div class="kpi-value">13</div>        
         </div>    
     </div>
     <div class="hr-tracking-section">        
@@ -90,39 +90,32 @@ body{background:#f4f6f9;padding:30px;color:#1f2937;}
         <div class="hr-kpis-grid">            
             <div class="kpi">                
                 <div class="kpi-title">Planes de Acción</div>                
-                <div class="kpi-value yellow">82</div>            
+                <div class="kpi-value yellow">9</div>            
             </div>            
             <div class="kpi">                
-                <div class="kpi-title">Exhortos</div>                
-                <div class="kpi-value yellow">20</div>            
-            </div>            
-            <div class="kpi">                
-                <div class="kpi-title">Actas Administrativas</div>                
-                <div class="kpi-value red">12</div>            
-            </div>        
-            <div class="kpi">                
-                <div class="kpi-title">Bajas</div>                
+                <div class="kpi-title">Actas Adm.</div>                
                 <div class="kpi-value red">1</div>            
+            </div>            
+            <div class="kpi">                
+                <div class="kpi-title">Bajas Detectadas</div>                
+                <div class="kpi-value red">2</div>            
             </div>        
         </div>    
     </div>
     <div class="provider-tracking-section">        
-        <div class="provider-tracking-title">Entregas del Proveedor</div>        
+        <div class="provider-tracking-title">Avance de Auditoría</div>        
         <div class="provider-kpis-grid">            
             <div class="kpi">                
-                <div class="kpi-title">Meta Total</div>                
+                <div class="kpi-title">Meta Total Mes</div>                
                 <div class="kpi-value" style="color: #1f2937;">150</div>                
-                <div class="kpi-subtext">Videos Proy.</div>            
             </div>            
             <div class="kpi">                
-                <div class="kpi-title">Avance Físico</div>                
-                <div class="kpi-value-pct" style="color: #005EB8;">136 <span style="font-size:12px; color:#6b7280; font-weight:normal;">/ 136 Evaluaciones.</span></div>                
-                <div class="kpi-subtext" style="color:#00B050; font-weight: bold;"></div>            
+                <div class="kpi-title">Muestra Semana 1 Proveedor 36% </div>                
+                <div class="kpi-value-pct" style="color: #005EB8;">55 <span style="font-size:12px; color:#6b7280; font-weight:normal;">/ 150 Evs.</span></div>                
             </div>            
             <div class="kpi">                
-                <div class="kpi-title">Por Entregar</div>                
-                <div class="kpi-value-pct green">9.33%</div>                
-                <div class="kpi-subtext">14 Videos Pent.</div>            
+                <div class="kpi-title">% Avance Mes Calidad</div>                
+                <div class="kpi-value-pct yellow">13/155 9%</div>            
             </div>        
         </div>    
     </div>
@@ -130,628 +123,209 @@ body{background:#f4f6f9;padding:30px;color:#1f2937;}
 
 <div class="flex">
 <div class="section">
-    <h2>Top 10 Agencias Destacadas (>= 85)</h2>
+    <h2>Agencias con Mejor Desempeño (>= 85)</h2>
     <table class="table">
         <tr>
             <th>Agencia</th>
             <th>Calificación</th>
-            <th style="text-align: center;">Motos (Uds)</th>
-            <th style="text-align: center;">Monto Ventas</th>
+            <th style="text-align: center;">Estatus / Seguimiento</th>
         </tr>
-        <tr><td>14 Tláhuac</td><td><span class="badge badge-green">100</span></td><td style="text-align: center; font-weight: bold;">74</td><td style="text-align: center;">$1,944,624.60</td></tr>
-        <tr><td>199 Mapastepec</td><td><span class="badge badge-green">100</span></td><td style="text-align: center; font-weight: bold;">30</td><td style="text-align: center;">$760,932.76</td></tr>
-        <tr><td>25 Chalco</td><td><span class="badge badge-green">100</span></td><td style="text-align: center; font-weight: bold;">53</td><td style="text-align: center;">$1,412,454.28</td></tr>
-        <tr><td>109 Abasolo</td><td><span class="badge badge-green">96</span></td><td style="text-align: center; font-weight: bold;">49</td><td style="text-align: center;">$1,250,914.68</td></tr>
-        <tr><td>73 San Mateo Atenco</td><td><span class="badge badge-green">95</span></td><td style="text-align: center; font-weight: bold;">57</td><td style="text-align: center;">$1,602,812.68</td></tr>
-        <tr><td>77 Tlajomulco</td><td><span class="badge badge-green">93</span></td><td style="text-align: center; font-weight: bold;">57</td><td style="text-align: center;">$1,641,247.79</td></tr>
-        <tr><td>209 Progreso de Obregón</td><td><span class="badge badge-green">91</span></td><td style="text-align: center; font-weight: bold;">30</td><td style="text-align: center;">$877,560.36</td></tr>
-        <tr><td>22 Valle de Chalco</td><td><span class="badge badge-green">91</span></td><td style="text-align: center; font-weight: bold;">56</td><td style="text-align: center;">$1,457,781.19</td></tr>
-        <tr><td>29 Oceania</td><td><span class="badge badge-green">91</span></td><td style="text-align: center; font-weight: bold;">72</td><td style="text-align: center;">$1,934,067.29</td></tr>
-        <tr><td>08 Chimalhuacán</td><td><span class="badge badge-green">90</span></td><td style="text-align: center; font-weight: bold;">62</td><td style="text-align: center;">$1,755,582.44</td></tr>
+        <tr><td>03 Condesa</td><td><span class="badge badge-green">95</span></td><td style="text-align: center; font-weight: bold; color: #00B050;">Aprobada</td></tr>
+        <tr><td>235 Portal Centenario</td><td><span class="badge badge-green">93</span></td><td style="text-align: center; font-weight: bold; color: #00B050;">Aprobada</td></tr>
+        <tr><td>205 Valle de Chalco Tezozómoc</td><td><span class="badge badge-green">93</span></td><td style="text-align: center; font-weight: bold; color: #00B050;">Aprobada</td></tr>
+      </td></tr>
     </table>
-    <p style="font-size:11px; color:#1f2937; margin-top:10px;"><b>* Nota: Venta Total de las top 10: $12,882,395.63 | Total de Unidades Vendidas: 590 Uds.</b></p>
 </div>
 
 <div class="section">
-    <h2>Top 10 Mayor Riesgo</h2>
+    <h2>Agencias con Mayor Desviación (&lt; 85)</h2>
     <table class="table">
         <tr>
             <th>Agencia</th>
             <th>Calificación</th>
-            <th style="text-align: center;">Motos (Uds)</th>
-            <th style="text-align: center;">Monto Ventas</th>
+            <th style="text-align: center;">Estatus / Observación</th>
         </tr>
-        <tr><td>297 San Antonio Tecomitl</td><td><span class="badge badge-red">18</span></td><td style="text-align: center; font-weight: bold;">55</td><td style="text-align: center;">$1,525,814.65</td></tr>
-        <tr><td>264 Jesus Maria</td><td><span class="badge badge-red">27</span></td><td style="text-align: center; font-weight: bold;">23</td><td style="text-align: center;">$612,049.14</td></tr>
-        <tr><td>271 Tecpan</td><td><span class="badge badge-red">28</span></td><td style="text-align: center; font-weight: bold;">13</td><td style="text-align: center;">$261,626.72</td></tr>
-        <tr><td>82 Insurgentes Sur</td><td><span class="badge badge-red">29</span></td><td style="text-align: center; font-weight: bold;">46</td><td style="text-align: center;">$1,391,195.83</td></tr>
-        <tr><td>93 San Juan del Rio</td><td><span class="badge badge-red">29</span></td><td style="text-align: center; font-weight: bold;">56</td><td style="text-align: center;">$1,639,481.70</td></tr>
-        <tr><td>180 Carrillo Puerto</td><td><span class="badge badge-red">30</span></td><td style="text-align: center; font-weight: bold;">44</td><td style="text-align: center;">$1,189,563.49</td></tr>
-        <tr><td>88 Puebla Capu</td><td><span class="badge badge-red">33</span></td><td style="text-align: center; font-weight: bold;">57</td><td style="text-align: center;">$1,651,515.26</td></tr>
-        <tr><td>194 Manuel Doblado Gto.</td><td><span class="badge badge-red">35</span></td><td style="text-align: center; font-weight: bold;">25</td><td style="text-align: center;">$647,823.31</td></tr>
-        <tr><td>250 La Barca</td><td><span class="badge badge-red">37</span></td><td style="text-align: center; font-weight: bold;">60</td><td style="text-align: center;">$1,685,924.00</td></tr>
-        <tr><td>99 Celaya Centro</td><td><span class="badge badge-red">37</span></td><td style="text-align: center; font-weight: bold;">46</td><td style="text-align: center;">$1,194,396.93</td></tr>
+        <tr><td>116 Salvatierra</td><td><span class="badge badge-red">64</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción (Asesora Baja)</td></tr>
+        <tr><td>147 Chalco-Solidaridad</td><td><span class="badge badge-red">57</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción</td></tr>
+        <tr><td>222 Ameca</td><td><span class="badge badge-red">54</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción (Asesor Baja)</td></tr>
+        <tr><td>293 Chiconautla</td><td><span class="badge badge-red">54</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción</td></tr>
+        <tr><td>31 La Cúspide</td><td><span class="badge badge-red">50</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Acta Administrativa</td></tr>
+        <tr><td>276 Ciudad Mante</td><td><span class="badge badge-red">40</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción</td></tr>
+        <tr><td>161 Santa Cecilia</td><td><span class="badge badge-red">36</span></td><td style="text-align: center; color: #C00000; font-weight: bold;">Plan de Acción</td></tr>
     </table>
-    <p style="font-size:11px; color:#b91c1c; margin-top:10px;"><b>Nota: Venta total de las 10 Un Top $11,799,391.03 | Total de Unidades Vendidas: 450 Uds.</b></p>
 </div>
 </div>
 
-<div class="section">    
-    <h2>Análisis de Pareto: Top 5 Desviaciones Críticas en Atención al Cliente</h2>    
-    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">Principales áreas de oportunidad donde se deben generar mayores focos de atención y auditorías operativas urgentes.</p>        
+<div class="section"> 
+    <h2>Análisis de Pareto: Top 5 Desviaciones Críticas en Atención al Cliente</h2> 
+    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">Mapeo de las brechas críticas sobre la muestra de las 13 agencias evaluadas esta semana.</p>        
     <div class="pareto-container">        
         <div class="pareto-card">            
             <div class="pareto-info">                
                 <span class="pareto-rubro-badge">Impacto Crítico #1</span>                
-                <div class="pareto-title">Script Maestro</div>                
-                <div class="pareto-desc">La presentación del producto no se conecta con los beneficios de éxito o transformación esperados. Se omiten los argumentos de valor de acuerdo a las necesidades de cada cliente.</div>                
-                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 83.82%;"></div></div>            
+                <div class="pareto-title">Plan de Éxito Corporativo</div>                
+                <div class="pareto-desc">El vendedor no menciona de manera proactiva y completa los 3 puntos del Plan de Éxito (Moto ideal, ajuste a tu bolsillo y seguridad integrada).</div>                
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 76.92%;"></div></div>            
             </div>            
             <div class="pareto-stats">                
-                <div class="pareto-percentage">83.82%</div>                
-                <div class="pareto-sample">114 No Cumplen de 136</div>            
+                <div class="pareto-percentage">76.92%</div>                
+                <div class="pareto-sample">10 No Cumplen de 13</div>            
             </div>        
         </div>
         <div class="pareto-card">            
             <div class="pareto-info">                
                 <span class="pareto-rubro-badge">Impacto Crítico #2</span>                
-                <div class="pareto-title">Plan de Éxito</div>                
-                <div class="pareto-desc">Baja ejecución al presentar los puntos fundamentales (Moto ideal, ajuste a tu bolsillo y seguridad integrada) esto de manera inicial, proactiva y de forma natural con el cliente.</div>                
-                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 83.09%;"></div></div>            
+                <div class="pareto-title">Sondeo Tridimensional (Identificación del Villano)</div>                
+                <div class="pareto-desc">Falta de preguntas abiertas para identificar los 3 niveles de problema del cliente (Externo: tráfico, Interno: frustración y Filosófico: cómo se quiere sentir).</div>                
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 76.92%;"></div></div>            
             </div>            
             <div class="pareto-stats">                
-                <div class="pareto-percentage">83.09%</div>                
-                <div class="pareto-sample">113 No Cumplen de 136</div>            
+                <div class="pareto-percentage">76.92%</div>                
+                <div class="pareto-sample">10 No Cumplen de 13</div>            
             </div>        
         </div>
         <div class="pareto-card">            
             <div class="pareto-info">                
                 <span class="pareto-rubro-badge">Impacto Crítico #3</span>                
-                <div class="pareto-title">Sondeo / Villano</div>                
-                <div class="pareto-desc">Se limita la interacción a preguntas superficiales sin llegar a profundizar en los 3 niveles de problema (Externo, Interno y Filosófico), derivado de esto, solo se mencionan características de las motos sin tener un previo contexto por parte del cliente.</div>                
-                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 78.68%;"></div></div>            
+                <div class="pareto-title">Alineación del Modelo (Script Maestro)</div>                
+                <div class="pareto-desc">No se presenta el modelo alineado a la necesidad detectada, omitiendo brindar características claras conectadas con un beneficio de éxito o transformación.</div>                
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 76.92%;"></div></div>            
             </div>            
             <div class="pareto-stats">                
-                <div class="pareto-percentage">78.68%</div>                
-                <div class="pareto-sample">107 No Cumplen de 136</div>            
+                <div class="pareto-percentage">76.92%</div>                
+                <div class="pareto-sample">10 No Cumplen de 13</div>            
             </div>        
         </div>
         <div class="pareto-card">            
             <div class="pareto-info">                
                 <span class="pareto-rubro-badge">Impacto Crítico #4</span>                
-                <div class="pareto-title">Garantía</div>                
-                <div class="pareto-desc">Omisión u olvido al comunicar la vigencia oficial de los 3 años o 33 mil km, junto con la omisión para poder realizar el primer servicio.</div>                
-                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 60.29%;"></div></div>            
+                <div class="pareto-title">Registro de Datos (Captura en Pilot)</div>                
+                <div class="pareto-desc">El asesor comercial no solicita los datos del cliente ni explica que es para efectos de registrar y dar seguimiento formal a su visita.</div>                
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 76.92%;"></div></div>            
             </div>            
             <div class="pareto-stats">                
-                <div class="pareto-percentage">60.29%</div>                
-                <div class="pareto-sample">82 No Cumplen de 136</div>            
+                <div class="pareto-percentage">76.92%</div>                
+                <div class="pareto-sample">10 No Cumplen de 13</div>            
             </div>        
         </div>
         <div class="pareto-card">            
             <div class="pareto-info">                
                 <span class="pareto-rubro-badge">Impacto Crítico #5</span>                
-                <div class="pareto-title">Registro en Bitácora y uso de Pilot</div>                
-                <div class="pareto-desc">Los vendedores no solicitan datos para registro al cliente, o si los registran en bitácora, no hay captura de información en pilot para seguimiento.</div>                
-                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 47.79%;"></div></div>            
+                <div class="pareto-title">Términos de Garantía y Primer Servicio</div>                
+                <div class="pareto-desc">Omisión al informar que la garantía institucional es de 3 años o 33 mil km, y que el primer servicio técnico debe realizarse al 1er mes o a los 300 km.</div>                
+                <div class="pareto-progress-bg"><div class="pareto-progress-fill" style="width: 69.23%;"></div></div>            
             </div>            
             <div class="pareto-stats">                
-                <div class="pareto-percentage">47.79%</div>                
-                <div class="pareto-sample">65 No Cumplen de 136</div>            
+                <div class="pareto-percentage">69.23%</div>                
+                <div class="pareto-sample">9 No Cumplen de 13</div>            
             </div>        
         </div>    
     </div>
 </div>
-
-<div class="section">    
-    <h2>Análisis Completo de Desviación por Rubro Evaluado</h2>    
-    <p style="font-size: 13px; color: #6b7280; margin-bottom: 20px;">Haz clic sobre cualquiera de los rubros para desplegar u ocultar el desglose completo del reporte acumulado de Junio.</p>
-    
-    <details class="category-accordion">        
-        <summary class="category-summary">1. Protocolo de Bienvenida</summary>        
-        <div class="accordion-content">            
-            <table class="table">                
-                <thead>                    
-                    <tr>                        
-                        <th>Rubro Específico Evaluado</th>                        
-                        <th style="text-align: center; width: 160px;">No Cumplen</th>                        
-                        <th style="text-align: center; width: 160px;">% Desviación</th>                    
-                    </tr>                
-                </thead>                
-                <tbody>                    
-                    <tr>                        
-                        <td>Script de Bienvenida</td>                        
-                        <td style="text-align: center;">45 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">33.09%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Tiempos de Espera (Atención inmediata &lt; 40 segundos)</td>                        
-                        <td style="text-align: center;">3 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">2.21%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Contención al cliente (Presencias activas en caso de saturación)</td>                        
-                        <td style="text-align: center;">6 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">4.41%</td>                    
-                    </tr>                
-                </tbody>            
-            </table>        
-        </div>    
-    </details>
-
-    <details class="category-accordion" open>        
-        <summary class="category-summary">2. Atención al Cliente</summary>        
-        <div class="accordion-content">            
-            <table class="table">                
-                <thead>                    
-                    <tr>                        
-                        <th>Rubro Específico Evaluado</th>                        
-                        <th style="text-align: center; width: 160px;">No Cumplen</th>                        
-                        <th style="text-align: center; width: 160px;">% Desviación</th>                    
-                    </tr>                
-                </thead>                
-                <tbody>                    
-                    <tr>                        
-                        <td>Plan de éxito (Moto ideal, ajuste a tu bolsillo y seguridad)</td>                        
-                        <td style="text-align: center;">113 de 136</td>                        
-                        <td style="text-align: center;" class="text-red">83.09%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Escucha Activa (Plena atención sin repetir preguntas ni distracciones)</td>                        
-                        <td style="text-align: center;">5 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">3.68%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Proactividad (Iniciativa constante y manejo de silencios incómodos)</td>                        
-                        <td style="text-align: center;">14 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">10.29%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Sondeo/Villano (Identificar los 3 niveles de problema)</td>                        
-                        <td style="text-align: center;">107 de 136</td>                        
-                        <td style="text-align: center;" class="text-red">78.68%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Alternativas (Ofrecer variedad considerando distintos modelos)</td>                        
-                        <td style="text-align: center;">9 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">6.62%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Invitación a subirse a la moto de su interés</td>                        
-                        <td style="text-align: center;">23 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">16.91%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Script Maestro (Modelo alineado con beneficio de éxito)</td>                        
-                        <td style="text-align: center;">114 de 136</td>                        
-                        <td style="text-align: center;" class="text-red">83.82%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Ventec / Ofrecer casco durante la atención</td>                        
-                        <td style="text-align: center;">60 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">44.12%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Información completa y correcta</td>                        
-                        <td style="text-align: center;">34 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">25.00%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Garantía (Comunicar vigencia oficial e indicaciones)</td>                        
-                        <td style="text-align: center;">82 de 136</td>                        
-                        <td style="text-align: center;" class="text-red">60.29%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Póliza contra robo con violencia (3 meses)</td>                        
-                        <td style="text-align: center;">63 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">46.32%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Refacciones (Explicar adquisición)</td>                        
-                        <td style="text-align: center;">56 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">41.18%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Seguro Ana (Ofrecer cotización de convenio)</td>                        
-                        <td style="text-align: center;">56 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">41.18%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Opciones de Pago disponibles</td>                        
-                        <td style="text-align: center;">28 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">20.59%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Financiamientos / Énfasis principal en VENTO CREDIT</td>                        
-                        <td style="text-align: center;">18 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">13.24%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Pago en efectivo (Aclarar expresamente que no se recibe en sucursal)</td>                        
-                        <td style="text-align: center;">57 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">41.91%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Invitación a la compra (Ejecución de Cierre Directo)</td>                        
-                        <td style="text-align: center;">30 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">22.06%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Cierre Transicional (Entrega física o digital de la cotización formal)</td>                        
-                        <td style="text-align: center;">69 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">50.74%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Status Quo (Exponer consecuencias negativas de no adquirir)</td>                        
-                        <td style="text-align: center;">14 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">10.29%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Promociones y benefits vigentes</td>                        
-                        <td style="text-align: center;">6 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">4.41%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Amabilidad y Empatía institucional</td>                        
-                        <td style="text-align: center;">1 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.74%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Registro en Bitácora y uso de Pilot (Solicitud de datos)</td>                        
-                        <td style="text-align: center;">65 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">47.79%</td>                    
-                    </tr>                
-                </tbody>            
-            </table>        
-        </div>    
-    </details>
-
-    <details class="category-accordion">        
-        <summary class="category-summary">3. Imagen de la Agencia</summary>        
-        <div class="accordion-content">            
-            <table class="table">                
-                <tbody>                    
-                    <tr>                        
-                        <td>Vidrios, Banquetas y piso Limpios (Exterior e interior)</td>                        
-                        <td style="text-align: center;">0 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.00%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Motos alineadas y presentables en piso de venta</td>                        
-                        <td style="text-align: center;">0 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.00%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Escritorios ordenados y limpios</td>                        
-                        <td style="text-align: center;">0 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.00%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Pantalla (Contenido exclusivo de marca)</td>                        
-                        <td style="text-align: center;">6 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">4.41%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Conversación y Ruido en la Agencia (Lenguaje profesional)</td>                        
-                        <td style="text-align: center;">6 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">4.41%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Uniforme e imagen del personal oficial</td>                        
-                        <td style="text-align: center;">3 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">2.21%</td>                    
-                    </tr>                    
-                    <tr>                        
-                        <td>Alimentos y bebidas (Evitar consumo en piso)</td>                        
-                        <td style="text-align: center;">1 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.74%</td>                    
-                    </tr>                
-                    <tr>                        
-                        <td>Bajas en personal / Rotación</td>                        
-                        <td style="text-align: center;">1 de 136</td>                        
-                        <td style="text-align: center;" class="text-green">0.74%</td>                    
-                    </tr>                
-                </tbody>            
-            </table>        
-        </div>    
-    </details>
-
-    <details class="category-accordion">        
-        <summary class="category-summary">4. Despedida</summary>        
-        <div class="accordion-content">            
-            <table class="table">                
-                <tbody>                    
-                    <tr>                        
-                        <td>Script de Despedida Institucional</td>                        
-                        <td style="text-align: center;">55 de 136</td>                        
-                        <td style="text-align: center;" class="text-yellow">40.44%</td>                    
-                    </tr>                
-                </tbody>            
-            </table>        
-        </div>    
-    </details>
-</div>
-
 <div class="section">        
-    <h2>Estatus y Desempeño por Gerente Distrital</h2>        
+    <h2>Estatus y Desempeño por Gerente Distrital (Muestra Activa)</h2>        
     <table class="table">        
         <tr>            
             <th>Gerente Distrital</th>            
-            <th style="text-align: center; width: 120px;">Total Agencias</th>            
-            <th style="text-align: center; width: 120px;">Nota Experta</th>            
-            <th style="text-align: center; width: 120px;">Curva Aprend.</th>            
-            <th style="text-align: center; width: 140px;">Promedio Por Distrito</th>            
+            <th style="text-align: center; width: 120px;">Agencias Evaluadas</th>            
+            <th style="text-align: center; width: 140px;">Promedio Semana 1</th>            
             <th style="text-align: center; width: 150px;">Estatus</th>        
         </tr>        
         <tr>
-            <td><strong>Juan Carlos Rojo Barrañon</strong><span class="sub-cell-info">Distrito 2</span></td>
-            <td style="text-align: center; font-weight: bold;">44</td>
-            <td style="text-align: center;">43</td>
-            <td style="text-align: center; color:#6b7280;">1</td>
-            <td style="text-align: center; font-weight: bold;">69</td>
+            <td><strong>Vanesa Mondragon Salgado</strong><span class="sub-cell-info">Distrito 1</span></td>
+            <td style="text-align: center; font-weight: bold;">8</td>
+            <td style="text-align: center; font-weight: bold;">72</td>
+            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
+        </tr>
+        <tr>
+            <td><strong>Aldo Mauricio Tapia Gomez</strong><span class="sub-cell-info">Distrito 3</span></td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center; font-weight: bold;">59</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
         </tr>
         <tr>
-            <td><strong>Vanesa Mondragon Salgado</strong><span class="sub-cell-info">Distrito 1</span></td>
-            <td style="text-align: center; font-weight: bold;">36</td>
-            <td style="text-align: center;">36</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">69</td>
+            <td><strong>Juan Carlos Rojo Barrañon</strong><span class="sub-cell-info">Distrito 2</span></td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center; font-weight: bold;">52</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
         </tr>
         <tr>
             <td><strong>Omar Madrigal Torres</strong><span class="sub-cell-info">Distrito 4</span></td>
-            <td style="text-align: center; font-weight: bold;">21</td>
-            <td style="text-align: center;">21</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">65</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Aldo Mauricio Tapia Gomez</strong><span class="sub-cell-info">Distrito 3</span></td>
-            <td style="text-align: center; font-weight: bold;">35</td>
-            <td style="text-align: center;">33</td>
-            <td style="text-align: center; font-weight: bold; color:#005EB8;">2</td>
-            <td style="text-align: center; font-weight: bold;">60</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center; font-weight: bold;">40</td>
+            <td style="text-align: center;"><span class="badge badge-riesgo-critico">ALTO RIESGO</span></td>
         </tr>    
     </table>
 </div>
 
 <div class="section">        
-    <h2>Estatus y Desempeño por Gerente Regional</h2>        
+    <h2>Estatus y Desempeño por Gerente Regional (Muestra Activa)</h2>        
     <table class="table">        
         <tr>            
             <th>Gerente Regional</th>            
-            <th style="text-align: center; width: 120px;">Total Agencias</th>            
-            <th style="text-align: center; width: 120px;">Nota Experta</th>            
-            <th style="text-align: center; width: 120px;">Curva Aprend.</th>            
+            <th style="text-align: center; width: 120px;">Agencias Evaluadas</th>            
             <th style="text-align: center; width: 140px;">Promedio Región</th>            
             <th style="text-align: center; width: 150px;">Estatus</th>        
         </tr>        
         <tr>
-            <td><strong>Juan Carlos Arreola Rodriguez</strong></td>
-            <td style="text-align: center; font-weight: bold;">1</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-green">88</td>
+            <td><strong>Christian Alexis Fernandez Gomez</strong></td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td style="text-align: center; font-weight: bold;" class="text-green">94</td>
             <td style="text-align: center;"><span class="badge badge-green">APROBADO</span></td>
         </tr>
         <tr>
-            <td><strong>Yael Alejandro Flores Chavez</strong></td>
-            <td style="text-align: center; font-weight: bold;">4</td>
-            <td style="text-align: center;">4</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">84</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Felipe Lopez Gomez</strong></td>
-            <td style="text-align: center; font-weight: bold;">1</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">79</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Ricardo Zarraga Torres</strong></td>
-            <td style="text-align: center; font-weight: bold;">6</td>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">79</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Israel Gonzalez Sanchez</strong></td>
-            <td style="text-align: center; font-weight: bold;">4</td>
-            <td style="text-align: center;">4</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">78</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
             <td><strong>Josue Sebastian Rea Garcia</strong></td>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td style="text-align: center;">8</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">75</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Hubiel Mejia Garcia</strong></td>
             <td style="text-align: center; font-weight: bold;">3</td>
-            <td style="text-align: center;">3</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
             <td style="text-align: center; font-weight: bold;" class="text-yellow">73</td>
             <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
         </tr>
         <tr>
-            <td><strong>Pedro Humberto Trejo Rayon</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">72</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Armando Reyes Sanchez</strong></td>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td style="text-align: center;">8</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">71</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Adolfo Manuel Barrientos Arellano</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">71</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Jesus Vidals Herrera</strong></td>
-            <td style="text-align: center; font-weight: bold;">6</td>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;" class="text-yellow">71</td>
-            <td style="text-align: center;"><span class="badge badge-yellow">RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Jose Dorantes Peralta</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">67</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Mario Alejandro Ojeda Rodriguez</strong></td>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td style="text-align: center;">7</td>
-            <td style="text-align: center; color:#6b7280;">1</td>
-            <td style="text-align: center; font-weight: bold;">65</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Edgar Matheus Varelas Mancinas</strong></td>
-            <td style="text-align: center; font-weight: bold;">6</td>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">65</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Karina Vargas Vargas</strong></td>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td style="text-align: center;">8</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">65</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
             <td><strong>Jhonatan Santiago Zarate Nuñez</strong></td>
-            <td style="text-align: center; font-weight: bold;">6</td>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
+            <td style="text-align: center; font-weight: bold;">1</td>
             <td style="text-align: center; font-weight: bold;">64</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
         </tr>
         <tr>
-            <td><strong>Carlos Hermilo Landeros Heredia</strong></td>
-            <td style="text-align: center; font-weight: bold;">4</td>
-            <td style="text-align: center;">4</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">64</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Jorge Luis Contreras Hernnadez</strong></td>
+            <td><strong>Yael Alejandro Flores Chavez</strong></td>
             <td style="text-align: center; font-weight: bold;">3</td>
-            <td style="text-align: center;">3</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">63</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Christian Alexis Fernandez Gomez</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">62</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Ivan Garcia Cerritos</strong></td>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td style="text-align: center;">8</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">61</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Guadalupe del Carmen Orozco Lopez</strong></td>
-            <td style="text-align: center; font-weight: bold;">6</td>
-            <td style="text-align: center;">6</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">60</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Gerardo Alberto Olivares Jimenez</strong></td>
-            <td style="text-align: center; font-weight: bold;">2</td>
-            <td style="text-align: center;">2</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">60</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Rafael Alvarez Andrade</strong></td>
-            <td style="text-align: center; font-weight: bold;">4</td>
-            <td style="text-align: center;">3</td>
-            <td style="text-align: center; color:#6b7280;">1</td>
-            <td style="text-align: center; font-weight: bold;">60</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Antonio De Jesus Lara Aguilar</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">5</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
-            <td style="text-align: center; font-weight: bold;">58</td>
-            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
-        </tr>
-        <tr>
-            <td><strong>Pedro Alberto Fajardo Koh</strong></td>
-            <td style="text-align: center; font-weight: bold;">3</td>
-            <td style="text-align: center;">3</td>
-            <td style="text-align: center; color:#6b7280;">0</td>
             <td style="text-align: center; font-weight: bold;">56</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
         </tr>
         <tr>
-            <td><strong>Diego Ulises Rea Lopez</strong></td>
-            <td style="text-align: center; font-weight: bold;">7</td>
-            <td style="text-align: center;">7</td>
-            <td style="text-align: center; font-weight: bold; color:#005EB8;">0</td>
+            <td><strong>Edgar Matheus Varelas Mancinas</strong></td>
+            <td style="text-align: center; font-weight: bold;">1</td>
             <td style="text-align: center; font-weight: bold;">54</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
         </tr>
         <tr>
-            <td><strong>Rafael De Jesus Garcia Jimenez</strong></td>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td style="text-align: center;">4</td>
-            <td style="text-align: center; color:#6b7280;">1</td>
-            <td style="text-align: center; font-weight: bold;">47</td>
+            <td><strong>Ricardo Zarraga Torres</strong></td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center; font-weight: bold;">54</td>
             <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td><strong>Pedro Humberto Trejo Rayon</strong></td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center; font-weight: bold;">50</td>
+            <td style="text-align: center;"><span class="badge badge-alto-riesgo">ALTO RIESGO</span></td>
+        </tr>
+        <tr>
+            <td><strong>Jose Dorantes Peralta</strong></td>
+            <td style="text-align: center; font-weight: bold;">1</td>
+            <td style="text-align: center; font-weight: bold;">40</td>
+            <td style="text-align: center;"><span class="badge badge-riesgo-critico">ALTO RIESGO</span></td>
         </tr>    
     </table>
 </div>
 
-<div class="footer"><b>Conclusión:</b><br><br>
-Los resultados de junio de 2026 confirman que la red nacional con las **136 agencias** evaluadas mantiene desviaciones críticas en la ejecución del Manual de Ventas y los estándares de la Guía de Calidad. Al consolidar un promedio general de **66 puntos**, nos posicionamos significativamente por debajo del objetivo institucional obligatorio de **85 puntos**.
+<div class="footer"><b>Conclusión- Julio 2026 (Semana 1):</b><br><br>
+Las evaluaciones de esta semana concluyen con un promedio general de 65 puntos, resultado obtenido a partir de la evaluación de 13 agencias.
 
-Ante este escenario, se han estructurado los planes de acción masivos y exhortos correspondientes. Es indispensable que los Gerentes Regionales y de Distrito enfoquen sus auditorías semanales de inmediato en erradicar los focos críticos del Plan de Éxito, el uso estricto del Script Maestro y el correcto sondeo.    
+La principal área de oportunidad continúa concentrándose en los procesos comerciales fundamentales, particularmente en la ejecución del Script Maestro y el Plan de Éxito, rubros que presentan una ausencia de cumplimiento en el 76.92% de la muestra evaluada.
+
+Por lo anterior, se solicita a los Gerentes Distritales y Regionales reforzar las actividades de supervisión y acompañamiento en campo, así como dar seguimiento puntual a los compromisos establecidos en los Planes de Acción vigentes, con el objetivo de acelerar la corrección de las desviaciones detectadas.
+
+De manera complementaria, el área de Calidad y Capacitación llevará a cabo una serie de Workshops durante toda la semana, enfocados en prevenir recurrencias y fortalecer la correcta ejecución de los procesos comerciales. Estas sesiones estarán orientadas a las cinco principales áreas de oportunidad identificadas en el análisis de Pareto, brindando herramientas prácticas y ejemplos de aplicación para facilitar su implementación en las agencias.
 </div>
 
 </body>
